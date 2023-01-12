@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{error.titlecase}"></title>
+    <link rel="stylesheet" th:href="@{/css/error-page.css}">
+</head>
+<body>
+<h1 class="text-dark"><span th:text="#{error.upppercase}"></span> : <span th:text="${error}"></span></h1>
+<div class="link-container">
+    <a th:href="@{/}" class=" more-link" th:text="#{layout.product-page}"></a>
+</div>
+</body>
+</html>

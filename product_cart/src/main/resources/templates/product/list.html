@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta charset="UTF-8">
+    <title th:text="#{product.list}"></title>
+    <th:block th:replace="~{/layout::linkBootStrap}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{/layout::header}"></th:block>
+<h1 id="message" class="text-success text-center" th:if="${message}" th:text="${message}"></h1>
+<div class="container mt-5 mb-5 p-4 rounded" style="box-shadow: #ccc 7px 5px 20px 12px">
+    <h3 style="font-size: 40px" class="text-center text-primary" th:text="#{product.list}"></h3>
+    <div class="row">
+        <a href="/product/create"
+           style="text-decoration: none;font-size: 30px;padding: 10px;margin: 5px;border-radius: 30px"
+           class="btn btn-success text-center"
+           sec:authorize="hasAuthority('ADMIN')"
+           th:text="#{product.add-product}"></a>
+    </div>
+    <div class="row">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th scope="col" th:text="#{product.no}"></th>
+                <th scope="col" th:text="#{product.name}"></th>
+                <th scope="col" th:text="#{product.price}"></th>
+                <th scope="col" th:text="#{product.description}"></th>
+                <th scope="col" th:text="#{product.detail}"></th>
+                <th sec:authorize="hasAuthority('ADMIN')" scope="col" th:text="#{product.edit}"></th>
+                <th sec:authorize="hasAuthority('ADMIN')" scope="col" th:text="#{product.delete}"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="product,loop : ${products}">
+                <th scope="row" th:text="${loop.count}"></th>
+                <td th:text="${product.name}"></td>
+                <td th:text="${#numbers.formatDecimal(product.price,0,'COMMA',0,'POINT') + #messages.msg('product.vnd')}"></td>
+                <td th:text="${product.description}"></td>
+                <td>
+                    <a class="text-decoration-none btn btn-secondary"
+                       th:href="@{/product/detail/__${product.id}__}"
+                    ><i class="fa-solid fa-circle-info"></i></a>
+                </td>
+                <td sec:authorize="hasAuthority('ADMIN')">
+                    <a class="text-decoration-none btn btn-primary"
+                       th:href="@{/product/edit/__${product.id}__}"
+                    ><i class="fa-solid fa-pen-to-square"></i></a>
+                </td>
+                <td sec:authorize="hasAuthority('ADMIN')">
+                    <a class="text-decoration-none btn btn-danger"
+                       th:href="@{/product/delete/__${product.id}__}"
+                    ><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+<script th:inline="javascript" th:src="@{/js/product/list.js}">
+</script>
+</html>

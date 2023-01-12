@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <th:block th:replace="~{/layout::linkBootStrap}"></th:block>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<th:block th:replace="~{/layout::header}"></th:block>
+<div sec:authorize="!isAuthenticated()" style="margin-top: 20px">
+    <h3 class="text-center"
+        th:if="${#httpServletRequest.getParameter('error') == 'true'}"
+        style="color: red" th:text="${error}"
+        th:utext="#{login.error}"
+    ></h3>
+    <h3 class="text-primary text-center" th:text="#{login.enter-username-password}"></h3>
+    <!-- Login Form -->
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form th:action="@{/login-request}"
+                      style="display: flex; flex-direction: column;justify-content: center;align-items: center"
+                      name='form'
+                      method='POST'
+                >
+                    <input type="text" id="login" class="fadeIn second" name="username"
+                           th:placeholder="#{username}">
+                    <input type="password" id="password" class="fadeIn third" name="password"
+                           th:placeholder="#{password}">
+                    <input type="submit" class="fadeIn fourth" th:value="#{login}">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div
+        style="margin-top: 20px"
+        class="d-flex flex-column justify-content-center align-items-center"
+        sec:authorize="isAuthenticated()">
+    <p
+            style="font-size: 30px"
+            th:text="${#messages.msg('username')+ ' : ' + #authentication.name}"></p>
+    <p
+            style="font-size: 30px"
+            class="text-danger"
+            th:text="${#messages.msg('home.role')+ ' : '+ #authentication.authorities}"></p>
+</div>
+
+</body>
+</html>

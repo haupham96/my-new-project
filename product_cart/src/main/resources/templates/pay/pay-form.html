@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5"
+>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title th:text="#{vnpay.pay}"></title>
+    <th:block th:replace="~{/layout::linkBootStrap}"></th:block>
+</head>
+<body>
+<th:block th:replace="~{/layout::header}"></th:block>
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+        <h1 class="text-primary" th:text="#{vnpay.please-input}"></h1>
+    </div>
+    <div class="row d-flex justify-content-center align-items-center">
+        <form class="col-6" th:action="@{/pay}" method="post">
+            <div class="form-group">
+                <label for="orderDetail" th:text="#{vnpay.content}"></label>
+                <input type="text"
+                       name="orderDetail"
+                       class="form-control"
+                       id="orderDetail"
+                       th:value="#{vnpay.default-order-detail}"
+                       th:rows="5"
+                       maxlength="250"
+                >
+            </div>
+            <div class="form-group">
+                <label for="amount" th:text="#{vnpay.amout}"> </label>
+                <input type="text"
+                       readonly
+                       name="amount"
+                       class="form-control"
+                       id="amount"
+                       th:value="${ totalMoney + ' ' + #messages.msg('cart.vnd') }"
+                >
+            </div>
+            <button type="submit" class="btn btn-primary" th:text="#{vnpay.confirm}"></button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
