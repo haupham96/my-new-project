@@ -1,0 +1,15 @@
+com\example\promotionservice\app\entity\Promotion.class
+com\example\promotionservice\app\entity\ProductPromotion.class
+com\example\promotionservice\app\entity\Promotion$PromotionBuilder.class
+com\example\promotionservice\app\service\IPromotionService.class
+com\example\promotionservice\PromotionServiceApplication.class
+com\example\promotionservice\app\dto\ProductDTO.class
+com\example\promotionservice\common\TableName.class
+com\example\promotionservice\app\entity\ProductPromotion$ProductPromotionBuilder.class
+com\example\promotionservice\app\repository\IPromotionRepository.class
+com\example\promotionservice\app\service\PromotionServiceImpl.class
+com\example\promotionservice\app\exception_handler\GlobalExceptionHandler.class
+com\example\promotionservice\app\dto\PromotionDTO$PromotionDTOBuilder.class
+com\example\promotionservice\app\repository\IProductPromotionRepository.class
+com\example\promotionservice\app\controller\PromotionRestController.class
+com\example\promotionservice\app\dto\PromotionDTO.class

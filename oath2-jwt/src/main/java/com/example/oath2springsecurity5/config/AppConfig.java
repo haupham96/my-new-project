@@ -56,25 +56,8 @@ public class AppConfig {
                 .loginPage("/api/login/unauthenticated")
                 .defaultSuccessUrl("/api/login/success", true)
                 .failureUrl("/api/login/failure")
-//                .authorizationEndpoint()
-//                .authorizationRequestResolver(new CustomAuthorizationRequestResolver(this.clientRegistrationRepository))
-//                .and()
-//                .sessionManagement()
-//                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
-                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class)
-//                .and()
-//                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class)
-//                .authorizationEndpoint()
-//                .baseUri("/oauth2-authorize-client")
-//                .authorizationRequestRepository(authorizationRequestRepository())
-//                .and()
-//                .tokenEndpoint()
-//                .accessTokenResponseClient(accessTokenResponseClient())
-//                .and()
-//                .redirectionEndpoint()
-//                .baseUri("/oauth2/redirect")
-        ;
+                .addFilterBefore(jwtFilter(), UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }
