@@ -12,9 +12,10 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 public class LicenseRequest {
 
+  private final String messageCode = "EMinMax";
   @Length(min = 2, max = 3)
 //  @Pattern(regexp = "^\\d+$",message = "{E400}")
-  @LicenseCode(min = 1, max = 3, message = "EMinMax")
+  @LicenseCode(min = 1, max = 3, message = messageCode)
   private String licensedType;
 
   private String licensedFacilityCode;

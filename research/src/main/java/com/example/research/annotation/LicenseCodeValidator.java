@@ -2,7 +2,6 @@ package com.example.research.annotation;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import java.util.Locale;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.internal.engine.constraintvalidation.ConstraintValidatorContextImpl;
 import org.springframework.context.MessageSource;
@@ -14,6 +13,7 @@ public class LicenseCodeValidator implements ConstraintValidator<LicenseCode, St
   private int min;
   private int max;
   private String message;
+
   private final MessageSource messageSource;
 
   @Override
@@ -31,10 +31,15 @@ public class LicenseCodeValidator implements ConstraintValidator<LicenseCode, St
       isValid = true;
     }
     if (!isValid) {
+      // option 1 : DI Message-source
       String message = messageSource.getMessage(this.message, new Object[]{min, max},
           LocaleContextHolder.getLocale());
       context.disableDefaultConstraintViolation();
       context.buildConstraintViolationWithTemplate(message).addConstraintViolation();
+
+      // option 2 : add message parameter but remember to form your messageCode into {} Ex : {E500}
+//      contextImpl.addMessageParameter("0", min);
+//      contextImpl.addMessageParameter("1", max);
     }
     return isValid;
   }
