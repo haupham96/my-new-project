@@ -1,4 +1,4 @@
-package com.example.mybatis.config;
+package com.example.research.config;
 
 import java.nio.charset.StandardCharsets;
 import org.mybatis.spring.annotation.MapperScan;

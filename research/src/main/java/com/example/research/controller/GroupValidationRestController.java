@@ -1,7 +1,6 @@
-package com.example.mybatis.controller;
+package com.example.research.controller;
 
-import com.example.mybatis.request.LicenseRequest;
-import com.example.mybatis.request.RecyclerBranchRequest;
+import com.example.research.request.RecyclerBranchRequest;
 import jakarta.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;

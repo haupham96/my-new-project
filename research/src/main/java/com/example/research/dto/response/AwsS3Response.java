@@ -1,4 +1,4 @@
-package com.example.mybatis.dto.response;
+package com.example.research.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -1,7 +1,7 @@
-package com.example.mybatis.controller;
+package com.example.research.controller;
 
-import com.example.mybatis.dto.response.AwsS3Response;
-import com.example.mybatis.service.AwsS3Service;
+import com.example.research.dto.response.AwsS3Response;
+import com.example.research.service.AwsS3Service;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;

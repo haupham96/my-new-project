@@ -1,7 +1,7 @@
-package com.example.mybatis.controller;
+package com.example.research.controller;
 
-import com.example.mybatis.entity.Category;
-import com.example.mybatis.repository.ICategoryRepository;
+import com.example.research.entity.Category;
+import com.example.research.repository.ICategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,4 +1,4 @@
-package com.example.mybatis.infra;
+package com.example.research.infra;
 
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;

@@ -1,6 +1,6 @@
-package com.example.mybatis.repository;
+package com.example.research.repository;
 
-import com.example.mybatis.entity.Category;
+import com.example.research.entity.Category;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;

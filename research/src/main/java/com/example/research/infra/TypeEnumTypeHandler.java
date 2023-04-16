@@ -1,6 +1,6 @@
-package com.example.mybatis.infra;
+package com.example.research.infra;
 
-import com.example.mybatis.enums.Type;
+import com.example.research.enums.Type;
 import org.apache.ibatis.type.JdbcType;
 import org.apache.ibatis.type.MappedTypes;
 import org.apache.ibatis.type.TypeHandler;

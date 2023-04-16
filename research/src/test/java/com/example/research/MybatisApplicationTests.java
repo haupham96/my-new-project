@@ -1,7 +1,7 @@
-package com.example.mybatis;
+package com.example.research;
 
-import com.example.mybatis.entity.Product;
-import com.example.mybatis.repository.IProductRepository;
+import com.example.research.entity.Product;
+import com.example.research.repository.IProductRepository;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

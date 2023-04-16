@@ -1,6 +1,6 @@
-package com.example.mybatis.repository;
+package com.example.research.repository;
 
-import com.example.mybatis.entity.Product;
+import com.example.research.entity.Product;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

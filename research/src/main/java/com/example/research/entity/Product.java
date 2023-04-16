@@ -1,6 +1,6 @@
-package com.example.mybatis.entity;
+package com.example.research.entity;
 
-import com.example.mybatis.enums.Type;
+import com.example.research.enums.Type;
 import java.math.BigDecimal;
 import java.util.UUID;
 import lombok.AllArgsConstructor;

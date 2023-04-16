@@ -1,7 +1,7 @@
-package com.example.mybatis.controller;
+package com.example.research.controller;
 
-import com.example.mybatis.entity.Product;
-import com.example.mybatis.service.IProductService;
+import com.example.research.entity.Product;
+import com.example.research.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

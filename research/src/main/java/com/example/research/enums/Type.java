@@ -1,4 +1,4 @@
-package com.example.mybatis.enums;
+package com.example.research.enums;
 
 import lombok.Getter;
 

@@ -1,7 +1,8 @@
-package com.example.mybatis.service;
+package com.example.research.service;
 
-import com.example.mybatis.entity.Product;
-import com.example.mybatis.repository.IProductRepository;
+import com.example.research.entity.Product;
+import com.example.research.repository.IProductRepository;
+import com.example.research.service.IProductService;
 import java.util.List;
 import java.util.UUID;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.mybatis.config;
+package com.example.research.config;
 
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Protocol;

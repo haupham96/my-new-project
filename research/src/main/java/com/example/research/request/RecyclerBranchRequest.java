@@ -1,4 +1,4 @@
-package com.example.mybatis.request;
+package com.example.research.request;
 
 import jakarta.validation.Valid;
 import java.util.List;

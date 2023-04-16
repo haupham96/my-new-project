@@ -1,7 +1,7 @@
-package com.example.mybatis.service;
+package com.example.research.service;
 
-import com.example.mybatis.entity.Product;
 
+import com.example.research.entity.Product;
 import java.util.List;
 
 public interface IProductService {
