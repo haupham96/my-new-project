@@ -22,10 +22,10 @@ public class AppConfig {
     return messageSource;
   }
 
-  @Bean
-  LocalValidatorFactoryBean getValidator(){
-    LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
-    bean.setValidationMessageSource(messageSource());
-    return bean;
-  }
+//  @Bean
+//  LocalValidatorFactoryBean getValidator(){
+//    LocalValidatorFactoryBean bean = new LocalValidatorFactoryBean();
+//    bean.setValidationMessageSource(messageSource());
+//    return bean;
+//  }
 }

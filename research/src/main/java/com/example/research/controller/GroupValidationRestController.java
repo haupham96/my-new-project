@@ -1,9 +1,11 @@
 package com.example.research.controller;
 
+import com.example.research.exception.ValidateException;
 import com.example.research.request.RecyclerBranchRequest;
 import jakarta.validation.Valid;
 import java.util.HashMap;
 import java.util.Map;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
@@ -23,11 +25,7 @@ public class GroupValidationRestController {
       , BindingResult bindingResult
   ) {
     if (bindingResult.hasFieldErrors()) {
-      Map<String, String> errors = new HashMap<>();
-      bindingResult.getFieldErrors().forEach(fieldError -> {
-        errors.put(fieldError.getField(), fieldError.getDefaultMessage());
-      });
-      return ResponseEntity.badRequest().body(errors);
+      throw new ValidateException(bindingResult, "Bad request");
     }
     return ResponseEntity.ok(recyclerBranchRequest);
   }

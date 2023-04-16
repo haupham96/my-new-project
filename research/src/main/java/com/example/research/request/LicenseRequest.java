@@ -1,8 +1,6 @@
 package com.example.research.request;
 
-import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
+import com.example.research.annotation.LicenseCode;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,8 +12,9 @@ import org.hibernate.validator.constraints.Length;
 @AllArgsConstructor
 public class LicenseRequest {
 
-  @Length(min = 2,max = 3)
-  @Pattern(regexp = "^\\d+$",message = "{E400}")
+  @Length(min = 2, max = 3)
+//  @Pattern(regexp = "^\\d+$",message = "{E400}")
+  @LicenseCode(min = 1, max = 3, message = "EMinMax")
   private String licensedType;
 
   private String licensedFacilityCode;
