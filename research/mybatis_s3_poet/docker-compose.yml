@@ -1,0 +1,29 @@
+version: '1.0'
+services:
+  localstack:
+    image: localstack/localstack:latest
+    container_name: localstack
+    ports:
+      - '4566-4583:4566-4583'
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+      - EDGE_PORT=4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_DEFAULT_REGION=ap-northeast-1
+      - LOCALSTACK_VOLUME_DIR=/volume
+    volumes:
+      - '/var/run/docker.sock:/var/run/docker.sock'
+      - '/volume/local:/var/localstack'
+
+  postgres:
+    container_name: postgres_local
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123456
+    volumes:
+      - '/volume/local:/docker/volume/postgres'
+    ports:
+      - '5432:5432'

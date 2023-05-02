@@ -1,0 +1,15 @@
+UUID.,UUID,uuid
+ユーザID.,varchar(20),user_id
+処理業者ID.,varchar(40),recycler_id
+事業所ID.,varchar(60),branch_id
+シーケンスID.,Integer,sequence_id
+ファイル名.,String,file_name
+ファイルサイズ.,Long(8),file_size
+ファイルパス.,varchar(60),file_path
+登録日時.,Timestamp,create_timestamp
+登録者ID.,varchar(60),create_user_id
+更新日時.,Timestamp,update_timestamp
+更新者ID.,varchar(60),update_user_id
+削除日時.,Timestamp,delete_timestamp
+削除者ID.,varchar(60),delete_user_id
+状態.,Boolean,is_active
